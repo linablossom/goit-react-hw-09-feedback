@@ -21,11 +21,11 @@ const App = () => {
     setBad(bad + 1);
   };
 
-  // const onLeaveFeedback = {
-  //   onLeaveGoodFeedback,
-  //   onLeaveNeutralFeedback,
-  //   onLeaveBadFeedback,
-  // };
+  const onLeaveFeedback = {
+    onLeaveGoodFeedback,
+    onLeaveNeutralFeedback,
+    onLeaveBadFeedback,
+  };
 
   const countTotalFeedback = () => {
     return good + neutral + bad;
@@ -44,9 +44,10 @@ const App = () => {
     <>
       <Section title={"Please leave feedback"}>
         <FeedbackOptions
-          onLeaveGoodFeedback={onLeaveGoodFeedback}
-          onLeaveNeutralFeedback={onLeaveNeutralFeedback}
-          onLeaveBadFeedback={onLeaveBadFeedback}
+          {...onLeaveFeedback}
+          // onLeaveGoodFeedback={onLeaveGoodFeedback}
+          // onLeaveNeutralFeedback={onLeaveNeutralFeedback}
+          // onLeaveBadFeedback={onLeaveBadFeedback}
         />
       </Section>
       <Section title={"Statistics"}>
